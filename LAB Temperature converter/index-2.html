@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Temperature Converter</title>
+<script src="convert.js">
+</script>
+<style>
+	body {
+		font-family: Arial, Helvetica, sans-serif;
+	}
+
+	label {
+		display: block;
+	}
+
+	#errorMessage {
+		color: red;
+	}
+</style>
+
+<script>
+	function findCelsius(){
+        var fahrenheit = document.getElementById("fInput").value;
+        var celsius;
+        if(fahrenheit != ''){
+            celsius = (fahrenheit - 32) * 5/9;
+            document.getElementById("output").innerHTML = celsius;
+        }else{
+            document.getElementById("output").innerHTML = "Please enter a value!";
+        }
+    }
+
+
+
+    function findfahrenheit(){
+        var celsius = document.getElementById("cInput").value;
+        var fahrenheit;
+        if(celsius != ''){
+            fahrenheit = celsius * 9 / 5 + 32;
+            document.getElementById("output1").innerHTML = fahrenheit;
+        }else{
+            document.getElementById("output1").innerHTML = "Please enter a value!";
+        }
+    }
+
+</script>
+
+
+
+<body>
+	<h1>Temperature Converter</h1>
+	<p>
+		<label for="cInput">Celsius:</label>
+<input id="cInput" type="text">
+</p>
+<p>
+<label for="fInput">Fahrenheit:</label>
+<input id="fInput" type="text">
+</p>
+<button id="convertButton" onclick="findCelsius()" value="Convert1">Celsius will be :</button>
+<span id="output"></span>
+
+
+    <button id="convert" onclick="findfahrenheit()" value="Convert">fahrenheit will be </button>
+        <span id="output1"></span>
+       
+        <div id="errorMessage"></div>
+
+
+</div>
+<p>
+    <br>
+<img id="weatherImage" src="cold.png" alt="cold">
+</p>
+</body>
+
+</html>
